@@ -1,0 +1,46 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - Corsav</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container ">
+            <div class="navbar-header" >
+                <a href="@Url.Action("Index", "Home")">
+                <img id="Img-Logo" src="~/Content/IMG-Logo/CORSAV.jpg"/>
+                </a>
+            </div>
+            <div class="navbar-collapse ">
+                <ul class="nav navbar-nav">
+
+                    <li><a href="@Url.Action()">ACCESSORI DA GAMING</a></li>
+
+                    <li><a href="@Url.Action()">ACCESSORI PER LO STREAMING</a></li>
+
+                    <li><a href="@Url.Action()">COMPONENTI PER PC</a></li>
+
+                    <li><a href="@Url.Action()">PC GAMING</a></li>
+
+                    <li><a href="@Url.Action()">iCUE</a></li>
+
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="container body-content">
+        @RenderBody()
+        <hr/>
+        <footer>
+            <p>&copy; @DateTime.Now.Year - Corsav Application</p>
+        </footer>
+    </div>
+</body>
+</html>
