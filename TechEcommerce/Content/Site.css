@@ -33,7 +33,24 @@ textarea {
     border-radius:5px
 }
 
-.Link{
-    display:flex
+.Link-box{
+    display:flex;
+}
+
+.Link {
+    margin: 0px 15px 0px 15px;
+    list-style:none
+}
+
+.Link-item{
+    text-decoration:none;
+    letter-spacing:1px;
+    font-size:0.9em;
+    color:black
+    
+}
+
+.Link-item:hover{
+    color:black
 }
 
