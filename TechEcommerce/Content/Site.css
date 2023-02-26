@@ -1,21 +1,6 @@
-﻿body {
-    padding-bottom: 20px;
-}
-
-/* Set padding to keep content from hitting the edges */
-.body-content {
-    padding-left: 15px;
-    padding-right: 15px;
-}
-
-/* Override the default bootstrap behavior where horizontal description lists 
-   will truncate terms that are too long to fit in the left column 
-*/
-.dl-horizontal dt {
+﻿.dl-horizontal dt {
     white-space: normal;
 }
-
-/* Set width on the form input elements since they're 100% wide by default */
 input,
 select,
 textarea {
@@ -54,3 +39,38 @@ textarea {
     color:black
 }
 
+.Img-Item{
+    image-resolution:snap;
+    object-fit:contain;
+    width:100%;
+    height:500px
+    
+}
+
+.footer{
+    background-color:black;
+    color:gray;
+    height:100%
+}
+
+.Item-Footer{
+    margin:0px;
+    height:100%
+}
+
+.Img{
+    object-fit:contain
+}
+
+#Carousel{
+    background-color:black
+}
+
+#List-Tech{
+    background-image:url("~/Content/Img-List-Tech/sfondoperlista.jpg");
+    background-position:center;
+    background-size:cover;
+    background-repeat:no-repeat;
+    height:400px;
+    position:relative
+}

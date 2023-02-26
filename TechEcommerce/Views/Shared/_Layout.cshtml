@@ -4,6 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - Corsav</title>
+    <script src="https://kit.fontawesome.com/bc5a659226.js" crossorigin="anonymous"></script>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
     @Scripts.Render("~/bundles/jquery")
@@ -30,14 +31,17 @@
 
                     <li class="Link"><a href="@Url.Action()" class="Link-item">iCUE</a></li>
 
+                    <li class="Link"><a href="@Url.Action()" class="Link-item"><i class="fas fa-shopping-cart"></i></a></li>
+
+                    <li class="Link"><a href="@Url.Action()" class="Link-item"><i class="fas fa-user"></i></a></li>
                 </ul>
             </div>
     </div>
-    <div class="container body-content">
+    <div>
         @RenderBody()
         <hr/>
-        <footer>
-            <p>&copy; @DateTime.Now.Year - Corsav Application</p>
+        <footer class="footer">
+            <p class="Item-Footer">&copy; @DateTime.Now.Year - Corsav Application</p>
         </footer>
     </div>
 </body>

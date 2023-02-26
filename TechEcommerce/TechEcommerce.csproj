@@ -140,6 +140,10 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\bootstrap.rtl.css" />
     <Content Include="Content\bootstrap.rtl.min.css" />
+    <Content Include="Content\IMG-Carousel\Auricular.jpg" />
+    <Content Include="Content\IMG-Carousel\computer.jpg" />
+    <Content Include="Content\IMG-Carousel\iCUE.jpg" />
+    <Content Include="Content\Img-List-Tech\sfondoperlista.jpg" />
     <Content Include="Content\IMG-Logo\CORSAV.jpg" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
@@ -176,7 +180,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Content\IMG-Carousel\" />
     <Folder Include="Content\IMG-Item\" />
     <Folder Include="Models\" />
   </ItemGroup>
