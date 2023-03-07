@@ -32,6 +32,8 @@ C:\Users\and\OneDrive\Desktop\progetto finale epicode\TechEcommerce\TechEcommerc
 C:\Users\and\OneDrive\Desktop\progetto finale epicode\TechEcommerce\TechEcommerce\bin\roslyn\VBCSCompiler.exe
 C:\Users\and\OneDrive\Desktop\progetto finale epicode\TechEcommerce\TechEcommerce\bin\roslyn\VBCSCompiler.exe.config
 C:\Users\and\OneDrive\Desktop\progetto finale epicode\TechEcommerce\TechEcommerce\bin\Antlr3.Runtime.dll
+C:\Users\and\OneDrive\Desktop\progetto finale epicode\TechEcommerce\TechEcommerce\bin\EntityFramework.dll
+C:\Users\and\OneDrive\Desktop\progetto finale epicode\TechEcommerce\TechEcommerce\bin\EntityFramework.SqlServer.dll
 C:\Users\and\OneDrive\Desktop\progetto finale epicode\TechEcommerce\TechEcommerce\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
 C:\Users\and\OneDrive\Desktop\progetto finale epicode\TechEcommerce\TechEcommerce\bin\Microsoft.Web.Infrastructure.dll
 C:\Users\and\OneDrive\Desktop\progetto finale epicode\TechEcommerce\TechEcommerce\bin\Newtonsoft.Json.dll
@@ -43,6 +45,8 @@ C:\Users\and\OneDrive\Desktop\progetto finale epicode\TechEcommerce\TechEcommerc
 C:\Users\and\OneDrive\Desktop\progetto finale epicode\TechEcommerce\TechEcommerce\bin\System.Web.WebPages.dll
 C:\Users\and\OneDrive\Desktop\progetto finale epicode\TechEcommerce\TechEcommerce\bin\System.Web.WebPages.Razor.dll
 C:\Users\and\OneDrive\Desktop\progetto finale epicode\TechEcommerce\TechEcommerce\bin\WebGrease.dll
+C:\Users\and\OneDrive\Desktop\progetto finale epicode\TechEcommerce\TechEcommerce\bin\EntityFramework.xml
+C:\Users\and\OneDrive\Desktop\progetto finale epicode\TechEcommerce\TechEcommerce\bin\EntityFramework.SqlServer.xml
 C:\Users\and\OneDrive\Desktop\progetto finale epicode\TechEcommerce\TechEcommerce\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
 C:\Users\and\OneDrive\Desktop\progetto finale epicode\TechEcommerce\TechEcommerce\bin\Newtonsoft.Json.xml
 C:\Users\and\OneDrive\Desktop\progetto finale epicode\TechEcommerce\TechEcommerce\bin\System.Web.Helpers.xml

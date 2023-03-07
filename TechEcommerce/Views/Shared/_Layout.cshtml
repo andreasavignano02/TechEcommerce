@@ -33,15 +33,16 @@
 
                     <li class="Link"><a href="@Url.Action()" class="Link-item"><i class="fas fa-shopping-cart"></i></a></li>
 
-                    <li class="Link"><a href="@Url.Action()" class="Link-item"><i class="fas fa-user"></i></a></li>
+                    <li class="Link"><a href="@Url.Action("LogIn", "Utents")" class="Link-item"><i class="fas fa-user"></i></a></li>
                 </ul>
             </div>
     </div>
     <div>
         @RenderBody()
-        <hr/>
         <footer class="footer">
             <p class="Item-Footer">&copy; @DateTime.Now.Year - Corsav Application</p>
+            
+
         </footer>
     </div>
 </body>
