@@ -32,8 +32,17 @@
                     <li class="Link"><a href="@Url.Action()" class="Link-item">iCUE</a></li>
 
                     <li class="Link"><a href="@Url.Action()" class="Link-item"><i class="fas fa-shopping-cart"></i></a></li>
-
-                    <li class="Link"><a href="@Url.Action("LogIn", "Utents")" class="Link-item"><i class="fas fa-user"></i></a></li>
+                    
+                    <li class="Link">
+                        @if (User.Identity.IsAuthenticated)
+                        {
+                            <a href="@Url.Action("LogOut", "Utents")" class="Link-item">Log Out</a>
+                        }
+                        else
+                        {
+                            <a href="@Url.Action("LogIn", "Utents")" class="Link-item"><i class="fas fa-user"></i></a>
+                        }
+                    </li>
                 </ul>
             </div>
     </div>

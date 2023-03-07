@@ -6,6 +6,7 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.Security;
 using TechEcommerce;
 
 namespace TechEcommerce.Controllers
@@ -14,54 +15,77 @@ namespace TechEcommerce.Controllers
     {
         private ModelDbContext db = new ModelDbContext();
 
-        // GET: Utents
+        [Authorize(Roles = "Admin")]
         public ActionResult Index()
         {
             var utents = db.Utents.Include(u => u.Rules);
             return View(utents.ToList());
         }
 
-        // GET: Utents/Details/5
-        public ActionResult Details(int? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            Utents utents = db.Utents.Find(id);
-            if (utents == null)
-            {
-                return HttpNotFound();
-            }
-            return View(utents);
-        }
-
-        // GET: Utents/Create
         public ActionResult LogIn()
         {
-            ViewBag.IdRules = new SelectList(db.Rules, "IDRules", "Rule");
             return View();
         }
 
-        // POST: Utents/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to, for 
-        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
+
         [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult LogIn([Bind(Include = "IdUtent,Username,Password,IdRules")] Utents utents)
+        public ActionResult Login(Utents user)
         {
-            if (ModelState.IsValid)
+            var count = db.Utents.Count(u => u.Username == user.Username && u.Password == user.Password);
+
+
+            if (count == 1)
             {
-                db.Utents.Add(utents);
-                db.SaveChanges();
-                return RedirectToAction("LogIn");
+                Utents current = db.Utents.Where(u => u.Username == user.Username && u.Password == user.Password).First();
+                FormsAuthentication.SetAuthCookie(current.Username, true);
+                if (current.IdRules.ToString() == "1")
+                {
+                    return RedirectToAction("Index", "Home");
+                }
+                else
+                {
+                    return Redirect(FormsAuthentication.DefaultUrl);
+                }
+            }
+            else
+            {
+                ViewBag.LogInErr = "Hai Sbagliato le credenziali riprova";
+                return View();
+            }
+        }
+            public ActionResult SignIn()
+            {
+                return View();
             }
 
-            ViewBag.IdRules = new SelectList(db.Rules, "IDRules", "Rule", utents.IdRules);
-            return View(utents);
+        [HttpPost]
+        public ActionResult SignIn(Utents utents)
+        {
+            var count = db.Utents.Count(u => u.Username == utents.Username);
+            if (count == 0)
+            {
+                utents.IdRules.ToString("2");
+                db.Utents.Add(utents);
+                db.SaveChanges();
+                return RedirectToAction("Index", "Home");
+            }
+            else
+            {
+                ViewBag.ExistUser = "Le credenziali messe sono già in uso";
+                return View();
+            }
         }
 
-        // GET: Utents/Edit/5
+        public ActionResult LogOut()
+        {
+            FormsAuthentication.SignOut();
+            return RedirectToAction("Index", "Home");
+        }
+
+
+
+
+        [Authorize(Roles = "Admin")]
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -77,9 +101,7 @@ namespace TechEcommerce.Controllers
             return View(utents);
         }
 
-        // POST: Utents/Edit/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to, for 
-        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
+        
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include = "IdUtent,Username,Password,IdRules")] Utents utents)
@@ -92,41 +114,6 @@ namespace TechEcommerce.Controllers
             }
             ViewBag.IdRules = new SelectList(db.Rules, "IDRules", "Rule", utents.IdRules);
             return View(utents);
-        }
-
-        // GET: Utents/Delete/5
-        public ActionResult Delete(int? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            Utents utents = db.Utents.Find(id);
-            if (utents == null)
-            {
-                return HttpNotFound();
-            }
-            return View(utents);
-        }
-
-        // POST: Utents/Delete/5
-        [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(int id)
-        {
-            Utents utents = db.Utents.Find(id);
-            db.Utents.Remove(utents);
-            db.SaveChanges();
-            return RedirectToAction("Index");
-        }
-
-        protected override void Dispose(bool disposing)
-        {
-            if (disposing)
-            {
-                db.Dispose();
-            }
-            base.Dispose(disposing);
         }
     }
 }
