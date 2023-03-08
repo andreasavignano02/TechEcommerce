@@ -44,12 +44,13 @@ namespace TechEcommerce.Controllers
                 }
                 else
                 {
+                    
                     return Redirect(FormsAuthentication.DefaultUrl);
                 }
             }
             else
             {
-                ViewBag.LogInErr = "Hai Sbagliato le credenziali riprova";
+                ViewBag.ErrorAuthentication = "Non esistono queste credenziali prova a registrarti";
                 return View();
             }
         }

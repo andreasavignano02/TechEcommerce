@@ -102,6 +102,7 @@ textarea {
 #Start-Form{
     display:flex;
     justify-content:center;
+    align-items:center;
     background-color:lightgray;
-    height:50vh;
+    height:100vh;
 }
