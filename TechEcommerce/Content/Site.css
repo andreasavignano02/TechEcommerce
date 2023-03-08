@@ -46,16 +46,6 @@ textarea {
     
 }
 
-.footer{
-    background-color:black;
-    color:gray;
-    height:100%
-}
-
-.Item-Footer{
-    margin:0px;
-    height:100%
-}
 
 .Img{
     object-fit:contain
@@ -105,4 +95,33 @@ textarea {
     align-items:center;
     background-color:lightgray;
     height:100vh;
+}
+
+.footer{
+    display:flex;
+    align-items: center;
+    justify-content: space-around;
+    background-color:black;
+    color:gray;
+    height:100%;
+    height:100px;
+    max-height:100px
+}
+
+.Item-Footer{
+    margin:0px;
+    height:100%;
+    display:flex;
+    align-items:center
+}
+
+.Link-Admin{
+    text-decoration:none;
+    color: gray;
+}
+
+.Link-Admin:hover {
+    text-decoration: none;
+    color: gray;
+    font-size:1.2em;
 }

@@ -12,10 +12,5 @@ namespace TechEcommerce.Controllers
         {
             return View();
         }
-        [Authorize(Roles = "Admin")]
-        public ActionResult Privata()
-        {
-            return View();
-        }
     }
 }

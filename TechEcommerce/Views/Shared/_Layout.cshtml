@@ -50,8 +50,17 @@
         @RenderBody()
         <footer class="footer">
             <p class="Item-Footer">&copy; @DateTime.Now.Year - Corsav Application</p>
-            
-
+            @if (User.Identity.IsAuthenticated) 
+             { 
+                if (User.IsInRole("1"))
+                {
+                    <a class="Link-Admin" href="@Url.Action("Index", "Utents")">Hub Personale</a>
+                }
+                else if(User.IsInRole("2")){
+                    <h5>La miglior azienda di pc con oltre 50 Partnership</h5>
+                }
+             
+             }
         </footer>
     </div>
 </body>

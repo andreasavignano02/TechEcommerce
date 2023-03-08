@@ -1,0 +1,43 @@
+﻿@model IEnumerable<TechEcommerce.Utents>
+
+@{
+    ViewBag.Title = "Lista";
+}
+
+<h2>Lista Utenti/Dipendenti</h2>
+
+<div class="container-fluid">
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Rules.Rule)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Username)
+            </th>
+            <th hidden>
+                @Html.DisplayNameFor(model => model.Password)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Rules.Rule)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Username)
+                </td>
+                <td hidden>
+                    @Html.DisplayFor(modelItem => item.Password)
+                </td>
+                <td>
+                    @Html.ActionLink("Modify", "Edit", new { id = item.IdUtent })
+                </td>
+            </tr>
+        }
+
+    </table>
+</div>

@@ -15,7 +15,7 @@ namespace TechEcommerce.Controllers
     {
         private ModelDbContext db = new ModelDbContext();
 
-        [Authorize(Roles = "Admin")]
+        [Authorize(Roles = "1")]
         public ActionResult Index()
         {
             var utents = db.Utents.Include(u => u.Rules);
@@ -26,8 +26,6 @@ namespace TechEcommerce.Controllers
         {
             return View();
         }
-
-
         [HttpPost]
         public ActionResult Login(Utents user)
         {
@@ -65,6 +63,7 @@ namespace TechEcommerce.Controllers
             var count = db.Utents.Count(u => u.Username == utents.Username);
             if (count == 0)
             {
+                utents.IdRules = 2;
                 utents.IdRules.ToString("2");
                 db.Utents.Add(utents);
                 db.SaveChanges();
@@ -86,7 +85,7 @@ namespace TechEcommerce.Controllers
 
 
 
-        [Authorize(Roles = "Admin")]
+        [Authorize(Roles = "1")]
         public ActionResult Edit(int? id)
         {
             if (id == null)

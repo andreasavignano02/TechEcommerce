@@ -46,7 +46,7 @@ namespace TechEcommerce.Models
             try
             {
                 Utents utent = db.Utents.Where(u => u.Username == username).First();
-                roles.Add(utent.Rules);
+                roles.Add(utent.IdRules.ToString());
                 return roles.ToArray();
             }catch
             {

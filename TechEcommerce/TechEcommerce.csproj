@@ -203,6 +203,8 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Utents\LogIn.cshtml" />
     <Content Include="Views\Utents\SignIn.cshtml" />
+    <Content Include="Views\Utents\Index.cshtml" />
+    <Content Include="Views\Utents\Edit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
