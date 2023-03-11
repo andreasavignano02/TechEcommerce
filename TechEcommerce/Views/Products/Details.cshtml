@@ -1,0 +1,32 @@
+﻿@model TechEcommerce.Products
+@{
+    ViewBag.Title = "Details";
+}
+
+
+<h2 class="position-absolute text-white">Details:</h2>
+
+<div class="container-fluid middle-tower">
+    <div class="d-flex w-100 justify-content-around align-items-center">
+        <div class="ContainerImg">
+            <img class="w-75 h-75" src="~/Content/Img-Card/@Html.DisplayFor(model => model.ImgProducts)" />
+        </div>
+        <ul class="li-description container-details">
+            <li class="Li-Item">
+                <div>
+                    <p>@Html.DisplayFor(model => model.NameProducts)</p>
+                </div>
+            </li>
+            <li class="li-description">
+                <div class="container-details w-100">
+                    <h4>Dettagli:</h4>
+                    <p>@Html.DisplayFor(model => model.ProductDescription)</p>
+                </div>
+            </li>
+            <li>
+                <a class="Link-item" href="@Url.Action("AddCart", "Orders", new { id = Html.DisplayFor(modelItem => Model.IDProduct)})">Aggiungi al Carrello</a>
+            </li>
+        </ul>       
+    </div>
+</div>
+<a class="position-absolute text-decoration-none" href="@Url.Action("Index", "Home")">Torna alla Home</a>

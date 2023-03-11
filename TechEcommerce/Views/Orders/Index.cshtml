@@ -1,0 +1,50 @@
+﻿@model IEnumerable<TechEcommerce.Order>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Carrello</h2>
+<div class="Table-Orders">
+    <table class="table">
+        <tr>
+            <th>
+                <p>Nome dei Prodotti:</p>
+            </th>
+            <th>
+                <p>Quantità</p>
+            </th>
+            <th class=""></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Products.NameProducts)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Quantity)
+                </td>
+                <td class="text-end">
+                    @Html.ActionLink("Modifica Quantità", "Edit", new { id = item.IDOrder }) |
+                    @Html.ActionLink("Togli articolo", "Delete", new { id = item.IDOrder })
+                </td>
+            </tr>
+        }
+
+    </table>
+</div>
+<hr />
+<div class="d-flex justify-content-around">
+    <div class="d-flex">
+        <a class="Link-item trasformation" href="@Url.Action("DeleteCart", "Orders")">Svuta Cestino</a>
+    </div>
+    <div class="d-flex trasformation">
+        <a class="Link-item" href="@Url.Action("")">Completa Acquisto</a>
+    </div>
+    <div class="d-flex">
+        <h3>Totale:</h3>
+        Viewbag.totale
+    </div>
+</div>

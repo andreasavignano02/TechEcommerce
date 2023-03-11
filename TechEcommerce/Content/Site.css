@@ -125,3 +125,87 @@ textarea {
     color: gray;
     font-size:1.2em;
 }
+
+.Add-item{
+    font-size:1.2em;
+    color: black;
+    text-decoration:none;
+    padding:10px;
+    margin-bottom:20px;
+}
+
+.Add-item:hover{
+    text-decoration:none;
+    background-color:black;
+    color:white;
+    transition: 2s;
+}
+
+.box-products{
+    height:100vh;
+    align-items:center;
+    flex-wrap:wrap;
+    background-color:lightgray;
+    border-radius:15px;
+}
+
+.Img-Card{
+    padding:15px;
+    background-color: lightgray;
+}
+
+.Image{
+    width:250px;
+    height:200px;
+    
+}
+
+.Long{
+    height:300px;
+    width:300px;
+}
+
+.contenitore{
+    height:100vh;
+}
+
+.ContainerImg{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    width:500px;
+    height:500px;
+}
+
+.li-description{
+    text-decoration:none;
+}
+
+.container-details{
+    background-color:lightgray;
+    padding:20px;
+    width:300px;
+    border-radius: 10px;
+}
+
+.middle-tower {
+    height: 100vh;
+    background-image: url("Img-List-Tech/sfondoperlista.jpg");
+}
+
+.quantity{
+    width:50px;
+}
+
+.Li-Item{
+    margin-bottom:15px;
+}
+
+.Modify-Quantity{
+    background-color: lightgray;
+    height:75vh;
+    align-items:center
+}
+.Table-Orders{
+    height:75vh
+}

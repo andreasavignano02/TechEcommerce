@@ -1,0 +1,43 @@
+﻿@model TechEcommerce.Order
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        <h4>Modifica quantità: </h4>
+
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @Html.HiddenFor(model => model.IDOrder)
+        @Html.HiddenFor(model => model.IdProducts)
+        @Html.HiddenFor(model => model.IdUtent)
+
+    <div class="Modify-Quantity">
+        <div class="container">
+            <p>Quantità:</p>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Quantity, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Quantity, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+    </div>
+}
+
+<div style="background-color:lightgray" class="Link-item">
+    @Html.ActionLink("Torna all'ordine", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

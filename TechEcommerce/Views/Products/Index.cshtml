@@ -1,0 +1,62 @@
+﻿@model IEnumerable<TechEcommerce.Products>
+
+@{
+    ViewBag.Title = "Lista Prodotti";
+}
+
+<h2>Lista Prodotti:</h2>
+<div class="container-fluid">
+    <a class="Add-item" href="@Url.Action("Add", "Products")">Add</a>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.NameProducts)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CodeProducts)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ImgProducts)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Cost)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ExitDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ProductDescription)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NameProducts)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CodeProducts)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ImgProducts)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Cost)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ExitDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ProductDescription)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.IDProduct }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.IDProduct })
+                </td>
+            </tr>
+        }
+
+    </table>
+</div>

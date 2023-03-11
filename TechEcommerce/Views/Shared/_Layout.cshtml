@@ -21,18 +21,19 @@
             <div>
                 <ul class="Link-box">
 
-                    <li class="Link"><a href="@Url.Action()" class="Link-item">ACCESSORI DA GAMING</a></li>
+                    <li class="Link"><a href="@Url.Action("AccessoriG", "Products")" class="Link-item">ACCESSORI DA GAMING</a></li>
 
-                    <li class="Link"><a href="@Url.Action()" class="Link-item">ACCESSORI PER LO STREAMING</a></li>
+                    <li class="Link"><a href="@Url.Action("AccessoriS", "Products")" class="Link-item">ACCESSORI PER LO STREAMING</a></li>
 
-                    <li class="Link"><a href="@Url.Action()" class="Link-item">COMPONENTI PER PC</a></li>
+                    <li class="Link"><a href="@Url.Action("Componenti", "Products")" class="Link-item">COMPONENTI PER PC</a></li>
 
-                    <li class="Link"><a href="@Url.Action()" class="Link-item">PC GAMING</a></li>
+                    <li class="Link"><a href="@Url.Action("SpecifyId", "Products", new {id = 5})" class="Link-item">PC GAMING</a></li>
 
-                    <li class="Link"><a href="@Url.Action()" class="Link-item">iCUE</a></li>
+                    <li class="Link"><a href="@Url.Action("SpecifyId", "Products", new {id = 8})" class="Link-item">iCUE</a></li>
 
-                    <li class="Link"><a href="@Url.Action()" class="Link-item"><i class="fas fa-shopping-cart"></i></a></li>
-                    
+                    @if (User.Identity.IsAuthenticated) { 
+                    <li class="Link"><a href="@Url.Action("Index","Orders")" class="Link-item"><i class="fas fa-shopping-cart"></i></a></li>
+                    }
                     <li class="Link">
                         @if (User.Identity.IsAuthenticated)
                         {

@@ -4,7 +4,10 @@
     ViewBag.Title = "Lista";
 }
 
-<h2>Lista Utenti/Dipendenti</h2>
+<div class="d-flex justify-content-around">
+    <h2>Lista Utenti/Dipendenti</h2>
+    <a class="Link-item" href="@Url.Action("Index", "Products")">Lista Articoli</a>
+</div>
 
 <div class="container-fluid">
     <table class="table">
@@ -34,7 +37,7 @@
                     @Html.DisplayFor(modelItem => item.Password)
                 </td>
                 <td>
-                    @Html.ActionLink("Modify", "Edit", new { id = item.IdUtent })
+                    <a class="Link-item" href="@Url.Action("Edit", "Utents", new { id = item.IdUtent })">Modify</a>
                 </td>
             </tr>
         }

@@ -1,0 +1,28 @@
+﻿@model IEnumerable<TechEcommerce.Products>
+
+@{
+    ViewBag.Title = "Accessori Gaming";
+}
+
+<h2>Accessori Gaming :</h2>
+
+<div class="container-fluid contenitore">
+    <div class="d-flex">
+        @foreach (var item in Model)
+        {
+            <div class="d-flex Long flex-wrap">
+                <div class="card d-flex Img-Card" style="width: 18rem;">
+                    <img src="~/Content/Img-Card/@Html.DisplayFor(modelItem => item.ImgProducts)" class="card-img-top Image">
+                    <div class="card-body">
+                        <h5 class="card-title">@Html.DisplayFor(modelItem => item.NameProducts)</h5>
+                        <p class="card-text">@Html.DisplayFor(modelItem => item.ProductDescription)</p>
+                        <div class="d-flex justify-content-between">
+                            <a href="@Url.Action("Details", "Products", new {id = Html.DisplayFor(modelItem => item.IDProduct)})" class="btn btn-primary">Scopri di più</a>
+                            <a href="@Url.Action("AddCart","Orders", new {id = Html.DisplayFor(modelItem => item.IDProduct)})" class="Link-item">Add to cart</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>

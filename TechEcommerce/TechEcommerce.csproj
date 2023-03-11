@@ -127,6 +127,8 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\OrdersController.cs" />
+    <Compile Include="Controllers\ProductsController.cs" />
     <Compile Include="Controllers\UtentsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -157,12 +159,23 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\bootstrap.rtl.css" />
     <Content Include="Content\bootstrap.rtl.min.css" />
+    <Content Include="Content\Img-Card\Alimentatore Corsav.jpg" />
+    <Content Include="Content\Img-Card\case corsav.jpg" />
     <Content Include="Content\Img-Card\cuffie con auricolare.jpg" />
+    <Content Include="Content\Img-Card\iCue Corsav.jpg" />
+    <Content Include="Content\Img-Card\Monitor Corsav.jpg" />
     <Content Include="Content\Img-Card\monitor gaming.jpg" />
+    <Content Include="Content\Img-Card\Mouse Corsav.jpg" />
     <Content Include="Content\Img-Card\notebook gaming.jpg" />
     <Content Include="Content\Img-Card\pc da gaming.jpg" />
     <Content Include="Content\Img-Card\pc.jpg" />
+    <Content Include="Content\Img-Card\Processore Corsav.jpg" />
+    <Content Include="Content\Img-Card\RAM Corsav.jpg" />
+    <Content Include="Content\Img-Card\Scheda Madre Corsav.jpg" />
+    <Content Include="Content\Img-Card\Scheda Video Corsav.jpg" />
+    <Content Include="Content\Img-Card\SSD Corsav.jpg" />
     <Content Include="Content\Img-Card\tastiera.jpg" />
+    <Content Include="Content\Img-Card\Ventole Corsav.jpg" />
     <Content Include="Content\Img-Card\webcam.jpg" />
     <Content Include="Content\IMG-Carousel\Auricular.jpg" />
     <Content Include="Content\IMG-Carousel\computer.jpg" />
@@ -205,6 +218,18 @@
     <Content Include="Views\Utents\SignIn.cshtml" />
     <Content Include="Views\Utents\Index.cshtml" />
     <Content Include="Views\Utents\Edit.cshtml" />
+    <Content Include="Views\Products\Details.cshtml" />
+    <Content Include="Views\Products\AccessoriG.cshtml" />
+    <Content Include="Views\Products\SpecifyId.cshtml" />
+    <Content Include="Views\Products\AccessoriS.cshtml" />
+    <Content Include="Views\Products\Componenti.cshtml" />
+    <Content Include="Views\Products\Index.cshtml" />
+    <Content Include="Views\Products\Add.cshtml" />
+    <Content Include="Views\Products\Edit.cshtml" />
+    <Content Include="Views\Products\Delete.cshtml" />
+    <Content Include="Views\Orders\Delete.cshtml" />
+    <Content Include="Views\Orders\Edit.cshtml" />
+    <Content Include="Views\Orders\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
