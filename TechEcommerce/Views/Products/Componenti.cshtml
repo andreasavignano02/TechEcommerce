@@ -16,7 +16,7 @@
                         <p class="card-text">@Html.DisplayFor(modelItem => item.ProductDescription)</p>
                         <div class="d-flex justify-content-between">
                             <a href="@Url.Action("Details", "Products", new {id = Html.DisplayFor(modelItem => item.IDProduct)})" class="btn btn-primary">Scopri di più</a>
-                            <a href="@Url.Action("AddCart","Orders", new {id = Html.DisplayFor(modelItem => item.IDProduct)}))" class="Link-item">Add to cart</a>
+                            <a href="@Url.Action("AddCart","Orders", new {id = Html.DisplayFor(modelItem => item.IDProduct)})" class="Link-item">Add to cart</a>
                         </div>
                     </div>
                 </div>

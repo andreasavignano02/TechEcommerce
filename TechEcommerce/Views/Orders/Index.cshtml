@@ -5,8 +5,16 @@
 }
 
 <h2>Carrello</h2>
+@if (Model.Count() > 0)
+{
+    <h1 class="text-center" style="height:20px; color:black">@ViewBag.Confirmed</h1>
+}
+else
+{
+    <h1 class="text-center" style="height:20px; color:black">@ViewBag.ErrorCart</h1>
+}
 <div class="Table-Orders">
-    <table class="table">
+    <table class="table" style="background-color:lightgray">
         <tr>
             <th>
                 <p>Nome dei Prodotti:</p>
@@ -41,10 +49,10 @@
         <a class="Link-item trasformation" href="@Url.Action("DeleteCart", "Orders")">Svuta Cestino</a>
     </div>
     <div class="d-flex trasformation">
-        <a class="Link-item" href="@Url.Action("")">Completa Acquisto</a>
+        <a class="Link-item" href="@Url.Action("Confirmed","Orders")">Completa Acquisto</a>
     </div>
     <div class="d-flex">
         <h3>Totale:</h3>
-        Viewbag.totale
+        @ViewBag.Totale
     </div>
 </div>

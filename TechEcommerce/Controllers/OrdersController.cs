@@ -38,8 +38,10 @@ namespace TechEcommerce.Controllers
 
         public ActionResult Index()
         {
+            Order o = new Order();
             Utents utent = db.Utents.Where(u => u.Username == User.Identity.Name).First();
             var order = db.Order.Where(o => o.IdUtent == utent.IdUtent).ToList();
+            o.GetSum(utent.IdUtent);
             return View(order);
         }
 
@@ -100,12 +102,38 @@ namespace TechEcommerce.Controllers
 
         public ActionResult DeleteCart()
         {
+            
             Utents utent = db.Utents.Where(u => u.Username == User.Identity.Name).First();
-            db.Order.Remove();
+            var o = db.Order.Where(ord => ord.IdUtent == utent.IdUtent).ToList();
+            db.Order.RemoveRange(o);
             db.SaveChanges();
             return RedirectToAction("Index");
         }
 
+        public ActionResult Confirmed()
+        {
+            try
+            {
+                Utents utent = db.Utents.Where(u => u.Username == User.Identity.Name).First();
+                var o = db.Order.Where(ord => ord.IdUtent == utent.IdUtent).ToList();
+                if (o.Count() > 0)
+                {
+                    db.Order.RemoveRange(o);
+                    db.SaveChanges();
+                    ViewBag.Confirmed = "Complimenti hai conseguito l'acquisto con successo";
+                    return RedirectToAction("Index");
+                }
+                else
+                {
+                    ViewBag.ErrorCart = "Il carrello è vuoto";
+                    return RedirectToAction("Index");
+                }
+            } catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                return RedirectToAction("Index");
+            }
+        }
         protected override void Dispose(bool disposing)
         {
             if (disposing)

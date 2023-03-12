@@ -12,14 +12,17 @@
     @RenderSection("scripts", required: false)
 </head>
 <body>
-    <div class="container d-flex align-items-center justify-content-center">
+    <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark bg-white">
+        <div class="container d-flex align-items-center justify-content-between">
             <div id="Logo">
-
-                <a href="@Url.Action("Index","Home")"><img id="Img-Logo" src="~/Content/IMG-Logo/CORSAV.jpg"/></a>
-
-            </div>
-            <div>
-                <ul class="Link-box">
+                <a href="@Url.Action("Index","Home")"><img id="Img-Logo" class="navbar-brand" src="~/Content/IMG-Logo/CORSAV.jpg" /></a>
+            </div>  
+            
+            <button type="button" class="navbar-toggler bg-dark" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" title="Toggle navigation" aria-controls="navbarSupportedContent"aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon bg-dark"></span>
+            </button>
+            <div class="collapse navbar-collapse d-sm-inline-flex justify-content-between">
+                <ul class="Link-box navbar-nav flex-grow-1">
 
                     <li class="Link"><a href="@Url.Action("AccessoriG", "Products")" class="Link-item">ACCESSORI DA GAMING</a></li>
 
@@ -31,8 +34,9 @@
 
                     <li class="Link"><a href="@Url.Action("SpecifyId", "Products", new {id = 8})" class="Link-item">iCUE</a></li>
 
-                    @if (User.Identity.IsAuthenticated) { 
-                    <li class="Link"><a href="@Url.Action("Index","Orders")" class="Link-item"><i class="fas fa-shopping-cart"></i></a></li>
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                        <li class="Link"><a href="@Url.Action("Index","Orders")" class="Link-item"><i class="fas fa-shopping-cart"></i></a></li>
                     }
                     <li class="Link">
                         @if (User.Identity.IsAuthenticated)
@@ -46,23 +50,25 @@
                     </li>
                 </ul>
             </div>
-    </div>
-    <div>
-        @RenderBody()
-        <footer class="footer">
-            <p class="Item-Footer">&copy; @DateTime.Now.Year - Corsav Application</p>
-            @if (User.Identity.IsAuthenticated) 
-             { 
-                if (User.IsInRole("1"))
+        </div>
+    </nav>
+        <div>
+            @RenderBody()
+            <footer class="footer">
+                <p class="Item-Footer">&copy; @DateTime.Now.Year - Corsav Application</p>
+                @if (User.Identity.IsAuthenticated)
                 {
-                    <a class="Link-Admin" href="@Url.Action("Index", "Utents")">Hub Personale</a>
+                    if (User.IsInRole("1"))
+                    {
+                        <a class="Link-Admin" href="@Url.Action("Index", "Utents")">Hub Personale</a>
+                    }
+                    else if (User.IsInRole("2"))
+                    {
+                        <h5>La miglior azienda di pc con oltre 50 Partnership</h5>
+                    }
+
                 }
-                else if(User.IsInRole("2")){
-                    <h5>La miglior azienda di pc con oltre 50 Partnership</h5>
-                }
-             
-             }
-        </footer>
-    </div>
+            </footer>
+        </div>
 </body>
 </html>
