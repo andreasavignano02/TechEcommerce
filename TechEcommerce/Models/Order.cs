@@ -23,20 +23,5 @@ namespace TechEcommerce
         public virtual Products Products { get; set; }
 
         public virtual Utents Utents { get; set; }
-
-        public decimal GetSum(int id)
-        {
-            ModelDbContext dbContext = new ModelDbContext();
-            var order = dbContext.Order.Where(o => o.IdUtent == id).ToList();
-            foreach (var product in order)
-            {
-                int quantitasingola = product.Quantity;
-                Products prod = dbContext.Products.Where(p => p.IDProduct == product.IdProducts).First();
-                decimal costoprodotto = prod.Cost;
-                decimal sum = costoprodotto * quantitasingola;
-            }
-            decimal costototale = sum += sum;
-            return costototale;
-        }
     }
 }

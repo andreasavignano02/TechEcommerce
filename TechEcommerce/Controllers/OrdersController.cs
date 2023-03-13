@@ -15,7 +15,6 @@ namespace TechEcommerce.Controllers
         private ModelDbContext db = new ModelDbContext();
         Order o = new Order();
         
-        
         public ActionResult AddCart(int? id)
         {
             try
@@ -38,10 +37,16 @@ namespace TechEcommerce.Controllers
 
         public ActionResult Index()
         {
-            Order o = new Order();
+            double total = 0;
             Utents utent = db.Utents.Where(u => u.Username == User.Identity.Name).First();
             var order = db.Order.Where(o => o.IdUtent == utent.IdUtent).ToList();
-            o.GetSum(utent.IdUtent);
+            foreach (Order ord in order)
+            {
+                Products pro = db.Products.Where(p => p.IDProduct == ord.IdProducts).First();
+                double totale = Convert.ToDouble(pro.Cost * ord.Quantity);
+                total += totale;
+            }
+            ViewBag.Total = total;
             return View(order);
         }
 
@@ -133,6 +138,8 @@ namespace TechEcommerce.Controllers
                 Console.WriteLine(ex.Message);
                 return RedirectToAction("Index");
             }
+
+
         }
         protected override void Dispose(bool disposing)
         {

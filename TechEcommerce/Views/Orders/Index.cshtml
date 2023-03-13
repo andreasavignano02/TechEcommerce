@@ -52,7 +52,6 @@ else
         <a class="Link-item" href="@Url.Action("Confirmed","Orders")">Completa Acquisto</a>
     </div>
     <div class="d-flex">
-        <h3>Totale:</h3>
-        @ViewBag.Totale
+        <p><h3>Totale:</h3><span class="fs-4 fw-bold  ms-3">@ViewBag.Total.ToString("C")</span></p>
     </div>
 </div>
